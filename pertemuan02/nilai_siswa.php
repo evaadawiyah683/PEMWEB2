@@ -78,9 +78,9 @@ if (isset($_POST['simpan'])) {
 
     // Status kelulusan
     if ($nilai_total > 50) {
-        echo "<p>Status: <strong>Lulus</strong></p>";
+        echo "<p>Status: <strong>LULUS</strong></p>";
     } else {
-        echo "<p>Status: <strong>Tidak Lulus</strong></p>";
+        echo "<p>Status: <strong>TIDAK LULUS</strong></p>";
     }
 }
 ?>
