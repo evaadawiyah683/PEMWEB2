@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<?php
-    require_once 'fungsiku.php';
-?>
 <html lang="en">
 
 <head>
