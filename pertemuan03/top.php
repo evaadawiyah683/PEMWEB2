@@ -14,5 +14,5 @@
     <script src="https://kit.fontawesome.com/de0232a17f.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style="background: linear-gradient(#e9e9e9 20%, #bdbebd 40%,#a9a9a9 60%, #949494 65%, #707070 80%);">
     <div class="d-flex" id="wrapper">
