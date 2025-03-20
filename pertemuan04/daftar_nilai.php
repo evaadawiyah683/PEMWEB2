@@ -25,8 +25,8 @@ $mhs3->nilai_tugas = 67;
 $data_mhs = [$mhs1, $mhs2 , $mhs3];
 
 ?>
-<h3>Daftar Nilai Mahasiswa</h3>
-<table border="1" cellpadding="2" cellspacing="2" width="100%">
+<h3 class="text-center">Daftar Nilai Mahasiswa</h3>
+<table class="table table-hover">
     <thead>
     <tr><th>No</th><th>Nama Lengkap</th>
         <th>Mata Kuliah</th><th>Nilai UTS</th><th>Nilai UAS</th>
@@ -34,19 +34,30 @@ $data_mhs = [$mhs1, $mhs2 , $mhs3];
     </tr>
     </thead>
     <tbody>
-        <?php 
-         $nomor = 1;
-         foreach($data_mhs as $obj){
-        ?>
+<?php
+if(isset($_POST['simpan'])){
+    $mhs4 = new NilaiMahasiswa();
+    $mhs4->nama = $_POST['nama'];
+    $mhs4->matakuliah = $_POST['matkul'];
+    $mhs4->nilai_uts = $_POST['nilai_uts'];
+    $mhs4->nilai_uas = $_POST['nilai_uas'];
+    $mhs4->nilai_tugas = $_POST['nilai_tugas'];
+    $data_mhs[] = $mhs4;
+}
+?>
+<?php 
+ $nomor = 1;
+ foreach($data_mhs as $obj){
+?>
 <tr>
-    <td><?= $nomor ?></td><td><?=$obj->nama?></td>
-    <td><?=$obj->matakuliah?></td><td><?=$obj->nilai_uts?></td>
-    <td><?=$obj->nilai_uas?></td><td><?=$obj->nilai_tugas?></td>
-    <td><?=$obj->getNilaiAkhir()?></td><td><?=$obj->kelulusan()?></td>
+<td><?= $nomor ?></td><td><?=$obj->nama?></td>
+<td><?=$obj->matakuliah?></td><td><?=$obj->nilai_uts?></td>
+<td><?=$obj->nilai_uas?></td><td><?=$obj->nilai_tugas?></td>
+<td><?=$obj->getNilaiAkhir()?></td><td><?=$obj->kelulusan()?></td>
 </tr>
 <?php
-        $nomor++; 
-    }
+$nomor++; 
+}
 ?>
     </tbody>
 </table>
